@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "861452277890",
+    "firebase_url": "https://iot-smart-window-default-rtdb.firebaseio.com",
     "project_id": "iot-smart-window",
     "storage_bucket": "iot-smart-window.appspot.com"
   },
@@ -21,6 +22,35 @@
             "certificate_hash": "5ba92c39f1885343dfcd78f9d3230476626a14ec"
           }
         },
+        {
+          "client_id": "861452277890-l0mt4sn584scdgdqit3016eood7nd8na.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBitqNYSfBpQ38cOXaHEeMVZ3ukL93gtIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861452277890-l0mt4sn584scdgdqit3016eood7nd8na.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861452277890:android:02e59c32ddd7b1b5623c9b",
+        "android_client_info": {
+          "package_name": "com.example.ledshubarb"
+        }
+      },
+      "oauth_client": [
         {
           "client_id": "861452277890-l0mt4sn584scdgdqit3016eood7nd8na.apps.googleusercontent.com",
           "client_type": 3

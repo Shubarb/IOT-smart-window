@@ -3,9 +3,44 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Kotlin/IOT_Smart_Window/app/src/main/res/drawable-v24/custom_progressbar_drawable.xml" value="0.1115" />
-        <entry key="..\:/Kotlin/IOT_Smart_Window/app/src/main/res/layout/activity_main.xml" value="0.3875" />
-        <entry key="..\:/Kotlin/IOT_Smart_Window/app/src/main/res/layout/activity_read_data.xml" value="0.1" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable-v24/btnauto.xml" value="0.2095" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable-v24/btnhandmade.xml" value="0.2805" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable-v24/custum_button.xml" value="0.2455" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/background_gray.xml" value="0.313" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/background_shape.xml" value="0.2335" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/brg.xml" value="0.313" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/brg_new.xml" value="0.2805" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/brg_search.xml" value="0.313" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/brg_sellect.xml" value="0.2805" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/btnauto.xml" value="0.2805" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/button_float.xml" value="0.3255" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/circlebackground.xml" value="0.3255" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/error_background.xml" value="0.2805" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.2685" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.281" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.2695" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/ic_baseline_check_gray_24.xml" value="0.1245" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2685" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2685" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.2685" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.2685" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.2685" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/drawable/top_animation.xml" value="0.2115" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/activity_advertisement.xml" value="0.3875" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/activity_window.xml" value="0.3875" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/fragment_account.xml" value="0.3875" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/fragment_edit_profile.xml" value="0.17314814814814813" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/fragment_message.xml" value="0.3194444444444444" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/fragment_notification.xml" value="0.3734375" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/fragment_one.xml" value="0.3875" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/fragment_window_nomal.xml" value="0.3875" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/fragment_window_rolling.xml" value="0.3875" />
+        <entry key="..\:/Kotlin/LedShubarb/app/src/main/res/layout/layout_header_navigation.xml" value="0.33" />
       </map>
     </option>
   </component>

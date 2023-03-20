@@ -1,3 +1,53 @@
 <resources>
-    <string name="app_name">IOT_Smart_Window</string>
+    <string name="app_name">Adobe Illustrator</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="main_page_selected">%s page is selected</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="thing">1. Bên em đừng nói lời văn vở\n
+    Vì em thở nhẹ cũng thành thơ.\n
+2. Tớ có một siêu năng lực là nhắm mắt lại là có thể nhìn thấy cậu.\n
+3. Em có thể cười một xíu không? Cà phê của anh quên cho đường rồi.\n
+4. Cậu có biết cậu khác những vì sao ở điểm nào không? Sao ở trên trời, cậu ở trong tim tớ.\n
+5. Em có một siêu năng lực đó là siêu thích anh~ Cho dù anh là vàng trắng hay xanh đen, trong mắt em đều chỉ có anh.\n
+6. Có một đốm lửa nhỏ. Thắp lên hạnh phúc to.\n
+    Em đã có ai ngỏ. Hay là để anh lo\n
+7. Em yêu bầu trời xanh, yêu cả cánh hoa hồng.\n
+    Nhưng không quên một thứ, đó chính là yêu anh\n
+8. Chim thường yêu trời, con nít thường yêu kem.\n
+    Anh thì rất yêu đời, và cũng rất yêu em\n
+9. Xiêu lòng ánh mắt. Xong liều yêu anh\n
+10. Hôm nay trời xanh mây trắng.\n
+     Không say nắng mà say "i love you"\n
+11. Thức khuya em tỉnh bằng trà, yêu anh em trả bằng tình được không?\n
+12. Bao năm phê đá phê cần, không bằng một phút ngồi gần bên em\n
+13. Thay vì tặng anh một đóa hồng không héo, để em gửi anh một mối tình không phai!\n
+14. Họ thích nghe nhạc vì lời. Còn em lại thích trọn đời có anh.\n
+15. Chẳng cần nghiêng nước nghiêng thành. Chỉ cần nghiêng đủ lòng anh là vừa.\n
+16. Con cóc là cậu ông trời. Còn anh là cả cuộc đời của em.\n
+17. Anh ơi gió lạnh gần kề. Anh mau thu xếp mà về với em.\n
+18. Em đây không thích la cà. Em đây chỉ thích mặn mà với anh.\n
+19. Mọi người thì thích trà sữa. Còn em thì thích trà trộn vào tim anh.\n
+20. Em sinh ra không phải để sống vất vả. Mà là để sau này được gả cho anh.\n
+21. Thời tiết này yêu em là hợp lý. Anh mà bỏ phí thì là anh ngu.\n
+22. Em sinh ra không phải để sống vất vả. Mà là để sau này được gả cho anh.\n
+23. Muốn bình yên thì lên chùa cầu phúc. Muốn hạnh phúc thì đứng đó chờ em.\n
+24. Muốn cho thiên hạ trầm trồ. Sao anh không thử làm bồ của em.\n
+25. Cuộc sống thì giống cuộc đời. Còn anh thì giống bạn đời của em.\n
+26. Nếu có 2 con cua, 1 con to và 1 con nhỏ. Tớ sẽ là cua nhỏ, cậu sẽ là cua to\n
+27. Nếu có 2 vỏ chuối, vỏ to và vỏ bé. Tớ sẽ là vỏ nhỏ, còn cậu sẽ là vo to\n
+28. Nếu có 2 chồng sách, 1 chồng to và 1 chồng nhỏ. Tớ sẽ là chồng nhỏ, còn cậu là chong to\n
+29. Cậu cận thị à?, nếu không cận, thì sao cậu lại không nhìn ra tớ thích cậu chứ?\n
+30. Cậu giống như Google vậy, bởi cậu là tất cả những gì tớ tìm kiếm\n
+31. Đã New year mà chẳng được near you gì cả Năm mới chả thấy gì,chỉ thấy nhớ anh\n
+32. Anh ơi,Tết đến sum vầy... Muốn dâu ra mắt thì tìm em đây\n
+33. Người khác thích em sẽ đưa em hoa, quà. Nhưng em lại muốn anh đưa em về dinh.\n
+34. Bình minh là bên đó. Bình yên là bên anh\n
+35. Tóc em màu đen, môi em màu đỏ. Lại gần em hỏi nhỏ, anh có nhớ em không.\n
+36. Muối tan khi khuấy lên trong nuớc còn em thấy anh là tự tan rồi\n
+37. Tớ béo thế này, là bởi vì trong lòng tớ còn có cậu nữa\n
+38. Sao anh nhìn giống một người họ hàng của em thế? Giống con rể của me em\n
+39. Áo anh màu trắng. Mắt anh màu nâu. Cũng có gì đâu?. Mà làm má em hồng\n
+40. Đừng đuổi theo bus nữa, theo đuổi em đi. Em chạy chậm, còn dễ thương nữa.</string>
 </resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/shadowColor"
+    tools:context=".Home">
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="61dp"-->
+<!--        android:background="#191412"-->
+<!--        app:layout_scrollFlags="scroll|enterAlways"-->
+<!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />-->
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:openDrawer="start">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="?attr/actionBarSize"/>
+
+            <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+                android:id="@+id/bottomNavigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:mbn_backgroundBottomColor="@color/countBackgroundColor"
+                app:mbn_countBackgroundColor="@color/green"
+                app:mbn_countTextColor="@color/countTextColor"
+                app:mbn_defaultIconColor="@color/defaultIconColor"
+                app:mbn_rippleColor="@color/colorPrimary"
+                app:mbn_selectedIconColor="@color/countBackgroundColor"
+                app:mbn_shadowColor="@color/shadowColor" />
+        </RelativeLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</RelativeLayout>
