@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "861452277890",
+    "project_id": "iot-smart-window",
+    "storage_bucket": "iot-smart-window.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861452277890:android:ef143f936a8d3480623c9b",
+        "android_client_info": {
+          "package_name": "com.example.iot_smart_window"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861452277890-ndimg92doe7dhl5li3iatnffu5tvh819.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iot_smart_window",
+            "certificate_hash": "5ba92c39f1885343dfcd78f9d3230476626a14ec"
+          }
+        },
+        {
+          "client_id": "861452277890-l0mt4sn584scdgdqit3016eood7nd8na.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBitqNYSfBpQ38cOXaHEeMVZ3ukL93gtIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861452277890-l0mt4sn584scdgdqit3016eood7nd8na.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
