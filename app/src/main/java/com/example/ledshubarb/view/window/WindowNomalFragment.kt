@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -24,11 +25,12 @@ class WindowNomalFragment : Fragment() {
     private var mClosebutton: ImageView? = null
     private var mTickbutton: ImageView? = null
     private var mSquareProcess: SquareProgressBar? = null
-    private var mTxtCount: TextView? = null
+    private var mTxtCount: EditText? = null
+    private var mShowAngle: TextView? = null
     private lateinit var databaseMode : DatabaseReference
     private var number : String? = null
 
-    var max = 180
+    var max = 120
     var min = 0
 
     override fun onCreateView(
@@ -42,8 +44,9 @@ class WindowNomalFragment : Fragment() {
         mTickbutton = view.findViewById(R.id.tickButton)
         mClosebutton = view.findViewById(R.id.closeButton)
         mTxtCount = view.findViewById(R.id.txtCount)
+        mShowAngle = view.findViewById(R.id.showAngle)
 
-        mSquareProcess!!.setImage(R.drawable.snake)
+        mSquareProcess!!.setImage(R.drawable.doormiddle)
         databaseMode = Firebase.database.getReference("ControlWindow")
         readData()
         var i = mTxtCount!!.text.toString().toInt()
@@ -53,13 +56,14 @@ class WindowNomalFragment : Fragment() {
     }
 
     fun squareProgressBar(i:Int){
-        mSquareProcess!!.setProgress(i)
+        var s = i *100 /120
+        mSquareProcess!!.setProgress(s)
     }
     fun readData(){
         databaseMode!!.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 number = snapshot.child("Window").child("Number").value.toString()
-                mTxtCount!!.text = number
+                mShowAngle!!.text = "$number"
                 squareProgressBar(number!!.toInt())
             }
 
@@ -77,16 +81,16 @@ class WindowNomalFragment : Fragment() {
             count = i
             if(count > y){
                 count = y
-                mTxtCount!!.text = "$count"
+                mShowAngle!!.text = "$count"
                 squareProgressBar(count)
                 databaseMode.child("Window").child("Number").setValue(count)
             }else if(count < x){
                 count = x
-                mTxtCount!!.text = "$count"
+                mShowAngle!!.text = "$count"
                 squareProgressBar(count)
                 databaseMode.child("Window").child("Number").setValue(count)
             }else {
-                mTxtCount!!.text = "$count"
+                mShowAngle!!.text = "$count"
                 squareProgressBar(count)
                 databaseMode.child("Window").child("Number").setValue(count)
             }
@@ -97,9 +101,12 @@ class WindowNomalFragment : Fragment() {
                 Toast.makeText(requireContext(),"Window Open 100%", Toast.LENGTH_SHORT).show()
                 mOpenbutton!!.isEnabled = false
             }else{
-                var i = mTxtCount!!.text.toString().toInt()
-                count = i + 1
-                mTxtCount!!.text = "$count"
+                var i = mShowAngle!!.text.toString().toInt()
+                count = i + 15
+                if(count >= 120){
+                    count = 120
+                }
+                mShowAngle!!.text = "$count"
                 squareProgressBar(count)
                 databaseMode.child("Window").child("Number").setValue(count)
             }
@@ -110,9 +117,12 @@ class WindowNomalFragment : Fragment() {
                 Toast.makeText(requireContext(),"Window Closed", Toast.LENGTH_SHORT).show()
                 mClosebutton!!.isEnabled = false
             }else{
-                var i = mTxtCount!!.text.toString().toInt()
-                count = i - 1
-                mTxtCount!!.text = "$count"
+                var i = mShowAngle!!.text.toString().toInt()
+                count = i - 15
+                if(count <= 0){
+                    count = 0
+                }
+                mShowAngle!!.text = "$count"
                 squareProgressBar(count)
                 databaseMode.child("Window").child("Number").setValue(count)
             }

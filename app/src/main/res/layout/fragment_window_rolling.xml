@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3A3838"
+    android:background="@drawable/brg_new"
     tools:context=".view.window.WindowRollingFragment">
 
     <LinearLayout

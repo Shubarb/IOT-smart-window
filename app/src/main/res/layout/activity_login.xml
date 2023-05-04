@@ -61,14 +61,16 @@
             android:transitionName="password_tran"
             app:passwordToggleEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:id="@+id/password"
                 android:hint="Password"
-                app:hintTextColor="@color/white"
-                app:errorTextColor="#F41414"/>
+                android:imeOptions="actionGo"
+                android:inputType="textPassword"
+                app:errorTextColor="#F41414"
+                app:hintTextColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

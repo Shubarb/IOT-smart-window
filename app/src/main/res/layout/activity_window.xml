@@ -369,6 +369,7 @@
                         android:src="@drawable/win" />
 
                     <TextView
+                        android:id="@+id/txtRolling"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -409,9 +410,10 @@
                         android:layout_width="@dimen/_25sdp"
                         android:layout_height="@dimen/_25sdp"
                         android:layout_gravity="center"
-                        android:src="@drawable/win" />
+                        android:src="@drawable/door" />
 
                     <TextView
+                        android:id="@+id/txtNormal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"

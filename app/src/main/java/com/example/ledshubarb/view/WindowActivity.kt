@@ -1,10 +1,21 @@
 package com.example.ledshubarb.view
 
+import android.app.AlarmManager
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 //import androidx.camera.core.CameraSelector
 //import androidx.camera.core.Preview
@@ -12,6 +23,7 @@ import androidx.fragment.app.Fragment
 //import androidx.camera.view.PreviewView
 import ch.halcyon.squareprogressbar.SquareProgressBar
 import com.example.ledshubarb.R
+import com.example.ledshubarb.notification.*
 import com.example.ledshubarb.view.ui.HomeFragment
 import com.example.ledshubarb.view.ui.MessageFragment
 import com.example.ledshubarb.view.window.WindowNomalFragment
@@ -24,6 +36,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.mikhaellopez.circularfillableloaders.CircularFillableLoaders
+import java.util.*
 
 class WindowActivity : AppCompatActivity() {
 
@@ -40,6 +53,8 @@ class WindowActivity : AppCompatActivity() {
     private var mNumbRain: TextView? = null
     private var mNumbGas: TextView? = null
     private var mNumbLight: TextView? = null
+    private var mtxtRolling: TextView? = null
+    private var mtxtNorrmal: TextView? = null
 
     private var mLinearMode: LinearLayout? = null
     private var mRolling: LinearLayout? = null
@@ -64,6 +79,12 @@ class WindowActivity : AppCompatActivity() {
     private var mode : String? = null
     private var number : String? = null
 
+    lateinit var notificationManager: NotificationManager
+    lateinit var notificationChannel: NotificationChannel
+    lateinit var builder: Notification.Builder
+    private val channelId = "i.apps.notifications"
+    private val description = "Test notification"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_window)
@@ -71,10 +92,12 @@ class WindowActivity : AppCompatActivity() {
         findViewById()
         callFragment()
         replace(WindowNomalFragment())
+        mtxtNorrmal!!.setTextColor(Color.parseColor("#FFEB3B"))
         databaseOut()
         databaseMode()
         clickEventWindow()
     }
+
 
     fun callFragment(){
         mRollingFragment = WindowRollingFragment()
@@ -90,6 +113,8 @@ class WindowActivity : AppCompatActivity() {
         mTxtCount = findViewById(R.id.txtCount)
         mTxtMode = findViewById(R.id.txtAorH)
         switch = findViewById(R.id.btnAorH)
+        mtxtNorrmal = findViewById(R.id.txtNormal)
+        mtxtRolling = findViewById(R.id.txtRolling)
 
         prgHumi = findViewById(R.id.pgbHumi)
         prgRain = findViewById(R.id.pgbRain)
@@ -126,13 +151,13 @@ class WindowActivity : AppCompatActivity() {
 //                    mTickbutton!!.isEnabled = false
                     mTxtMode!!.text = "Auto"
 //                    Toast.makeText(applicationContext,"Auto",Toast.LENGTH_SHORT).show()
-                }else if(mode == "Handmade"){
+                }else if(mode == "Manual"){
                     switch!!.setBackgroundResource(R.drawable.btnhandmade)
 //                    mTxtCount!!.isEnabled = true
 //                    mOpenbutton!!.isEnabled = true
 //                    mClosebutton!!.isEnabled = true
 //                    mTickbutton!!.isEnabled = true
-                    mTxtMode!!.text = "Handmade"
+                    mTxtMode!!.text = "Manual"
 //                    Toast.makeText(applicationContext,"Handmade",Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(applicationContext,"Error mode",Toast.LENGTH_SHORT).show()
@@ -142,9 +167,9 @@ class WindowActivity : AppCompatActivity() {
 
                 switch!!.setOnClickListener {
                     if (mTxtMode!!.text == "Auto"){
-                        mTxtMode!!.text = "Handmade"
+                        mTxtMode!!.text = "Manual"
                         switch!!.setBackgroundResource(R.drawable.btnhandmade)
-                        databaseMode.child("Window").child("Mode").setValue("Handmade")
+                        databaseMode.child("Window").child("Mode").setValue("Manual")
                     }
                     else{
                         mTxtMode!!.text = "Auto"
@@ -173,6 +198,16 @@ class WindowActivity : AppCompatActivity() {
                 temp = snapshot.child("Outdoor").child("Temperature").value.toString()
                 dust = snapshot.child("Outdoor").child("Dust").value.toString()
 //                Log.d("oo","$rain , $light, ")
+
+                if(rain!!.toFloat().toInt() > 50) {
+                    createNotificationChannel("Warning Rain", "Rain: $rain")
+                }
+                if(light!!.toFloat().toInt() > 2000) {
+                    createNotificationChannel("Warning Light", "Light: $light")
+                }
+                if(temp!!.toFloat().toInt() > 30) {
+                    createNotificationChannel("Warning Temperature", "Temperature: $temp")
+                }
 
                 prgHumi?.setProgress(100 - humidity!!.toFloat().toInt())
                 mNumbHumid!!.text = "$humidity %"
@@ -204,12 +239,17 @@ class WindowActivity : AppCompatActivity() {
 
     fun clickEventWindow(){
         mRolling!!.setOnClickListener{
+            mtxtRolling!!.setTextColor(Color.parseColor("#FFEB3B"))
+            mtxtNorrmal!!.setTextColor(Color.parseColor("#03DAC5"))
             replace(WindowRollingFragment())
         }
         mNomal!!.setOnClickListener{
+            mtxtNorrmal!!.setTextColor(Color.parseColor("#FFEB3B"))
+            mtxtRolling!!.setTextColor(Color.parseColor("#03DAC5"))
             replace(WindowNomalFragment())
         }
     }
+
     private fun replace(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.frameControl,fragment)
@@ -217,4 +257,29 @@ class WindowActivity : AppCompatActivity() {
             commit()
         }
     }
+
+    private fun createNotificationChannel(title: String, message: String) {
+        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val intent = Intent(this, Notifications::class.java)
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+
+        val contentView = RemoteViews(packageName, R.layout.activity_notifications)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            notificationChannel = NotificationChannel(channelId, description, importance)
+            val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(notificationChannel)
+
+            builder = Notification.Builder(this, channelId)
+                .setContent(contentView)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setSmallIcon(R.drawable.air380x380)
+                .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.air380x380))
+                .setContentIntent(pendingIntent)
+        }
+        notificationManager.notify(1234, builder.build())
+    }
+
 }
